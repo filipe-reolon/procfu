@@ -1,0 +1,123 @@
+<div class="menu-header">
+    <a href="@[pf_screen:Home]" class="menu-item"><img class="menu-icon" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/house.svg"><p class="menu-text">Home</p></a>
+    <a href="@[pf_screen:ListadeChamados]" class="menu-item"><img class="menu-icon" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/headset.svg"><p class="menu-text">Chamados</p></a>
+    <a href="@[pf_screen:NovoChamado]" id="popupLink" class="menu-item"><img class="menu-icon" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/square-plus.svg"><p class="menu-text">Novo Chamado</p></a>
+</div>
+
+
+<div class="filter-header">
+    <div class="filter">
+        <label for="filterSelect">Status</label>
+        <select name="" id="filterSelect">
+            <option value="Em Andamento">Em Andamento</option>
+            <option value="Não Iniciado">Não Iniciado</option>
+            <option value="Em Análise">Em Análise</option>
+            <option value="Aguardando Retorno">Aguardando Retorno</option>
+            <option value="Aguardando Validação">Aguardando Validação</option>
+            <option value="Aguardando Fabricante">Aguardando Fabricante</option>
+            <option value="Interrompido">Interrompido</option>
+            <option value="Encerrado">Encerrado</option>
+            <option value="Todos">Todos</option>
+        </select>
+    </div>
+</div>
+
+<style>
+    .filter-header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .menu-header {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #E9E9E9;
+        padding: 15px 0 0 0;
+        justify-content: space-evenly;
+    }
+    .menu-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 0 8px;
+        color: black !important;
+    }
+    .menu-icon, .search-icon {
+        height: 25px;
+        width: 25px;
+    }
+    .pf-cards {
+        background-color: #E9E9E9;
+        display: flex !important;
+        flex-wrap: wrap;
+        margin: 0 !important;
+    }
+    .pf-search-bar {
+        width: calc(33% - 80px) !important;
+        margin: 20px !important;
+        padding: 20px !important;
+        display: flex !important;
+        align-items: center;
+    }
+    .pfm-footer {
+        background-color: #E9E9E9;
+        margin: 0;
+        padding: 15px 15px 450px 15px;
+    }
+    .pf-card-clickable {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-grow: 0;
+        width: calc(33% - 80px) !important;
+    }
+    .pf-card-clickable div:first-child {
+        margin-bottom: auto;
+    }
+    .pf-card-clickable>div {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: auto;
+    }
+    .pfmcappwrapper {
+        max-width: 1200px !important;
+    }
+    .pf-card.pf-card-clickable.hide {
+        display: none !important;
+    }
+    .search-input {
+        padding: 8px 12px !important;
+        margin: 4px !important;
+    }
+    .search-button {
+	background-color:#42b2c3 !important;
+	border-radius:8px !important;
+	display:inline-block !important;
+	cursor:pointer !important;
+	color:#ffffff !important;
+	font-family:Arial !important;
+	font-size:20px !important;
+	font-weight:bold !important;
+	padding:6px 16px !important;
+	text-decoration:none !important;
+	text-shadow:0px 1px 0px #3d768a !important;
+    width: 45px !important;
+    height: 25px !important;
+    background-image: url("https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/magnifying-glass.svg") !important;
+    background-position: center !important;
+    background-size: 60% !important;
+    background-repeat: no-repeat !important;
+}
+.search-button:hover {
+	box-shadow: 3px 3px 5px 2px #7fbdff;
+}
+.search-button:active {
+	position:relative !important;
+	top:2px !important;
+}
+    
+</style>
+
+<script src="https://cdn.jsdelivr.net/gh/filipe-reolon/procfu/lista-de-chamados.js" defer></script>

@@ -1,0 +1,48 @@
+<div class="menu-header">
+    <a href="@[pf_screen:Home]" class="menu-item"><img class="menu-icon" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/house.svg"><p class="menu-text">Home</p></a>
+    <a href="@[pf_screen:ListadeChamados]" class="menu-item"><img class="menu-icon" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/headset.svg"><p class="menu-text">Chamados</p></a>
+    <a href="@[pf_screen:NovoChamado]" id="popupLink" class="menu-item"><img class="menu-icon" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/square-plus.svg"><p class="menu-text">Novo Chamado</p></a>
+</div>
+
+
+
+<style>
+    .menu-header {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #E9E9E9;
+        padding: 15px 0 0 0;
+        justify-content: space-evenly;
+    }
+    .menu-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 0 8px;
+        color: black !important;
+    }
+    .menu-icon {
+        height: 25px;
+        width: 25px;
+    }
+    
+    .zui-row {
+        display: flex !important;
+        flex-wrap: wrap;
+        margin: 0 !important;
+        justify-content: space-between;
+    }
+    .pfmcappwrapper {
+        max-width: 1200px !important;
+    }
+    .zui-card-inner{
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+ </style>
