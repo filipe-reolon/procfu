@@ -1,9 +1,4 @@
-// JavaScript runs whenever data is rendered
-// NB: this is JavaScript and NOT ProcScript
-// target = jquery DOM wrapper of the current screen
-// my_variables = {foo:"bar",etc} - cannot be changed here
-
-const categoriaDivs = document.querySelectorAll('div[data-field="categorias"]')
+const categoriaDivs = document.querySelectorAll('td[data-field="categorias"]')
 categoriaDivs.forEach(function (div) {
 	const text = div.textContent.trim().toLowerCase()
 	div.style.borderRadius = '5px'
@@ -25,7 +20,7 @@ categoriaDivs.forEach(function (div) {
 		div.style.backgroundColor = '#E6E6E6'
 	}
 })
-const severidadeDivs = document.querySelectorAll('div[data-field="severidade"]')
+const severidadeDivs = document.querySelectorAll('td[data-field="severidade"]')
 severidadeDivs.forEach(function (div) {
 	const text = div.textContent.trim().toLowerCase()
 	div.style.borderRadius = '5px'
@@ -41,57 +36,52 @@ severidadeDivs.forEach(function (div) {
 		div.style.backgroundColor = '#BAFBAF'
 	}
 })
-const filterSelect = document.getElementById('filterSelect')
-// Get all the card elements
-const cards = document.querySelectorAll('.pf-card.pf-card-clickable')
-// Add an event listener to the select element
-filterSelect.addEventListener('change', function () {
-	const selectedStatus = filterSelect.value
-	// Loop through each card and check if it contains the selected dataset-id
-	cards.forEach(card => {
-		const statusDiv = card.querySelector('div[data-field="categorias"]')
-		const status = statusDiv.textContent
 
-		if (status === selectedStatus || selectedStatus === 'Todos') {
-			card.classList.remove('hide')
-		} else {
-			card.classList.add('hide')
-		}
-	})
-})
+const filterSelect = document.getElementById('filterSelect')
+const table = document.querySelector('.pftable.pf-tr-clickable');
+const tableLines = table.querySelectorAll('tbody tr');
+
+
 const selectedStatus = filterSelect.value
-cards.forEach(card => {
-	const statusDiv = card.querySelector('div[data-field="categorias"]')
-	const status = statusDiv.textContent
+tableLines.forEach(line => {
+	const statusDiv = line.querySelector('td[data-field="categorias"]')
+	const status = statusDiv != null ? statusDiv.textContent : "hide"
 
 	if (status === selectedStatus || selectedStatus === 'Todos') {
-		card.classList.remove('hide')
+		line.classList.remove('hide')
 	} else {
-		card.classList.add('hide')
+		line.classList.add('hide')
 	}
 })
+
 const searchBar = document.querySelector('.pf-search-bar')
+searchBar.classList.add('show')
 const inputSearchBar = searchBar.querySelector("input[type='text']")
 const searchButton = searchBar.querySelector('a')
 searchButton.classList.add('search-button')
-
 const searchIcon = document.createElement('img')
 searchIcon.className = "search-icon"
 searchIcon.src = "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/magnifying-glass.svg"
-console.log(searchIcon)
 searchButton.appendChild(searchIcon)
-console.log(searchButton)
-
 searchButton.textContent = ""
-
 inputSearchBar.classList.add("search-input")
 const header = document.querySelector('.filter-header')
 header.appendChild(searchBar)
 
-const cardsContainer = document.querySelector('.pf-cards')
-const searchBarToDelete = cardsContainer.querySelector('.pf-search-bar')
+const searchBarToDelete = document.querySelector('.pf-search-bar:not(.show)')
 if (searchBarToDelete) {
     searchBarToDelete.remove()
 }
+
+const solicitanteLines = document.querySelectorAll('td[data-field="solicitante"]')
+const solicitanteHead = document.querySelectorAll('th[data-field="solicitante"]')
+
+solicitanteLines.forEach(line => {
+    line.style.display = 'none'
+})
+solicitanteHead.forEach(line => {
+    line.style.display = 'none'
+})
+
 
 
